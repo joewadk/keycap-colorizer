@@ -3,10 +3,10 @@ name: Tests
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 concurrency:
@@ -74,7 +74,7 @@ jobs:
   release:
     name: Semantic release
     needs: [backend-tests, frontend-tests]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     defaults:
       run:
