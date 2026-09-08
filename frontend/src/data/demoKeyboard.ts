@@ -26,7 +26,7 @@ const rows: Spec[][] = [
   ],
   [
     k("left-control", "Ctrl", 1.25), k("left-meta", "Win", 1.25),
-    k("left-alt", "Alt", 1.25), k("space", "", 6.25), k("right-alt", "Alt", 1.25),
+    k("left-alt", "Alt", 1.25), k("space", "", 6.25), k("right-alt", "Alt"),
     k("function", "Fn"), k("right-control", "Ctrl"), k("arrow-left", "←"),
     k("arrow-down", "↓"), k("arrow-right", "→"),
   ],
@@ -80,4 +80,3 @@ export const demoKeyboard: KeyboardDefinition = {
   features: { knob: false, screen: false, badge: false },
   sourceUrl: "https://example.com/fixtures/ansi-65",
 };
-

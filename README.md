@@ -12,9 +12,11 @@ The current prototype has a 65% keyboard and a small sample palette. You can col
 
 Click a key to select it, or hold Shift to select several. Group buttons let you quickly select the letters, modifiers, arrows, and more. Pick a color to apply it, then click the active group again or use **Clear selection** to see the result without the highlight.
 
+A fit panel can flag missing key sizes or quantities when a kit's inventory is available. The sample palette doesn't include that information yet, so it shows “Fit not verified.” You can still try every color combination.
+
 ## Where it's headed
 
-Eventually, you'll be able to paste links to a keyboard and a keycap set and preview combinations using those products. More board layouts, saved designs, and warnings about keycaps that don't fit are planned.
+Eventually, you'll be able to paste links to a keyboard and a keycap set and preview combinations using those products. More board layouts and saved designs are planned.
 
 For now, it's a place to experiment with colors. Product links and saving aren't available yet.
 
@@ -79,6 +81,34 @@ Run frontend tests and check the production build from `frontend`:
 npm test
 npm run build
 ```
+
+To try the product-page reader, activate the backend environment and run these from `backend`:
+
+```powershell
+python -m playwright install chromium
+python -m app.ingestion "https://example.com/product"
+```
+
+Replace the example URL with a public keyboard or keycap product page. This prints the page details it can find and caches them under the project's `data/cache/pages` folder. Add `--refresh` to fetch it again or `--images 3` to save up to three candidate images under `data/images`.
+
+The reader is an early building block: it doesn't yet load those products into the preview. Some stores block automated browsers or need extraction rules of their own. Tests use local HTML fixtures and mocked browser/network calls, so they need no internet, API keys, or Chromium installation.
+
+You can also try Firecrawl for pages that Playwright struggles with. Add your Firecrawl API key to `.env` in the project root:
+
+```dotenv
+FIRECRAWL_API_KEY=your-key-here
+SCRAPER_PROVIDER=playwright
+```
+
+Then choose it for a scrape:
+
+```powershell
+python -m app.ingestion "https://example.com/product" --provider firecrawl
+```
+
+Use `--provider playwright` to compare the local scraper, or set `SCRAPER_PROVIDER=firecrawl` to make Firecrawl the default. Each provider has its own local page cache; `--refresh` fetches new data. Firecrawl uses its hosted service and account credits, while Playwright runs locally. There is no automatic paid fallback. Both feed the same product-detail parser, and neither requires an AI key.
+
+The app uses the [Firecrawl scrape API](https://docs.firecrawl.dev/api-reference/endpoint/scrape). The Firecrawl MCP login in Codex is separate; the app needs `FIRECRAWL_API_KEY`. The key stays in backend settings and is not saved in product caches.
 
 Development progress is tracked in [PROGRESS.md](PROGRESS.md).
 

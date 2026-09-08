@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Phase 5 — Keycap Palettes (complete; playable offline prototype)
+Phase 7 — Generic Product Scraping (complete; fixture-tested)
 
 ## Completed functionality
 
@@ -22,6 +22,11 @@ Phase 5 — Keycap Palettes (complete; playable offline prototype)
 - Added individual click selection, Shift-click multi-selection, and logical group selection.
 - Added a five-color fixture keycap palette with immediate local per-key painting.
 - Added hovered/selected key feedback plus reset-selected and reset-board controls.
+- Added deterministic size/legend matching with quantity allocation and explicit compatible, incompatible, and unknown results.
+- Added typed POST /api/compatibility/check and a workbench fit panel with missing-key details, incomplete-data warnings, and retry on backend errors. Painting remains available.
+- Added generic extraction of title, description, nested Product JSON-LD, variants, specifications, and deduplicated image candidates.
+- Added bounded Playwright loading, public URL checks, polite sequential intake, local HTML/evidence caching, and optional bounded raster image downloads.
+- Added CLI intake with refresh support, one-day page-cache expiry, corrupt-cache recovery, and concurrency deduplication.
 
 ## Tests added
 
@@ -31,19 +36,28 @@ Phase 5 — Keycap Palettes (complete; playable offline prototype)
 - Backend canonical layout count, spacing, grouping, sizing, and override tests.
 - Frontend deterministic geometry transform tests.
 - Frontend selection, multi-selection, group selection, painting, reset, fixture, palette, and workbench behavior tests.
+- Backend compatibility tests for all templates, critical key sizes, quantities, unknown inventory, vertical numpad keys, and API contracts.
+- Frontend fit-panel tests for success, warnings, unknown data, retry, cancellation, and painting despite missing keys.
 
 ## Tests currently passing
 
-- Backend: 27 tests passing.
-- Frontend: 24 tests passing.
+- Backend: 93 tests passing.
+- Frontend: 31 tests passing.
+- Release: 5 tests passing.
 
 ## Prototype feedback fixes
 
+- Added optional Firecrawl v2 raw-HTML loading alongside Playwright, CLI/environment provider selection, per-provider caches, validated responses, bounded downloads, and masked backend credentials. Project-root .env is loaded consistently. No automatic paid fallback or live paid request was made; provider tests use mocked HTTP.
+
+- Corrected compact-layout Right Alt to 1u so the bottom arrow row aligns with the navigation column; added frontend and backend alignment regression tests.
+
+- Expanded generated release notes with feature/fix sections, commit-body descriptions, and commit links; release rendering tests cover feature details and breaking-change notes.
+
 - Fixed release-note generation by using Conventional Commits preset 9 with the release-notes generator's writer 8 dependency. All 5 release tests pass, including rendering first-release notes with features, fixes, and breaking changes.
 
-- Release dependency consolidation is pending `npm install` in frontend: online installation was declined and the offline cache was incomplete. Until the frontend lockfile is regenerated, CI `npm ci` cannot pass with the new release dependencies.
+- Release dependency consolidation is complete; frontend manifest and lockfile are synchronized.
 
-- Configured semantic-release for main pushes after tests/build pass, with Conventional Commit analysis and GitHub tags/release notes. Release tooling shares frontend dependencies and lockfile. Added contributor guidance and release-rule tests. Live release verification requires a GitHub remote.
+- Configured semantic-release for master pushes after tests/build pass, with Conventional Commit analysis and GitHub tags/release notes. Release tooling shares frontend dependencies and lockfile. Added contributor guidance and release-rule tests.
 
 - Added root install/start helpers for Bash and PowerShell, with dependency checks, service shutdown handling, and README instructions.
 
@@ -63,10 +77,13 @@ Phase 5 — Keycap Palettes (complete; playable offline prototype)
 ## Known limitations
 
 - Product inputs are disabled until ingestion is implemented.
-- No compatibility analysis, scraping, AI, image sampling, or persistence yet.
+- No AI, image sampling, SQLite persistence, or full URL-to-preview workflow yet. Scraping returns evidence, not normalized geometry.
+- Live browser scraping requires `python -m playwright install chromium`. Browser lifecycle and downloads are mocked in the normal tests; no live vendor website verification has been performed.
+- Generic extraction may include unrelated image/variant candidates and misses stylesheet-controlled visibility. Blocked pages, logins, and CAPTCHAs surface failures; no bypass is attempted.
+- Sample palette inventory is unspecified, so its fit is unknown. Checks assess supplied inventory only; stem fit and row profile are not verified. Vertical keys need height evidence absent from the initial SupportedKey model.
 - The production Three.js bundle is functional but currently emits a size warning; code splitting is a later optimization.
 - Key legends are represented in data but not drawn on the initial 3D keycaps; hover feedback shows stable key IDs.
 
 ## Next implementation target
 
-Implement Phase 6 size-based keycap compatibility checks and display non-blocking warnings.
+Implement Phase 8 optional structured AI adapters with schema validation and mocked responses.

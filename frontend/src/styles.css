@@ -47,5 +47,9 @@ button:disabled, input:disabled { opacity: .48; }
 .text-button { width: auto; margin: 0; padding: 6px 0; background: transparent; color: #aeb7b0; border-bottom: 1px solid #667168; font: .7rem DM Mono, monospace; cursor: pointer; }
 .text-button:disabled { opacity: .3; cursor: not-allowed; }
 .interaction-hint { margin: 20px 0 0; color: #647068; font: .68rem DM Mono, monospace; text-align: center; }
+.compatibility-panel { margin-top: 24px; border-top: 1px solid #485147; padding-top: 16px; color: #d4d8cf; font-size: .85rem; line-height: 1.6; }
+.compatibility-panel h3 { margin: 0; font-size: 1rem; }
+.compatibility-panel summary { cursor: pointer; color: #e5cd95; }
+.compatibility-note { color: #a5b09f; }
 @media (max-width: 800px) { main { grid-template-columns: 1fr; gap: 45px; padding: 48px 0; } }
 @media (max-width: 700px) { .controls { grid-template-columns: 1fr; } .keyboard-canvas { height: 420px; } }

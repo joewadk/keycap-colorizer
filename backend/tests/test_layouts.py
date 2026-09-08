@@ -81,3 +81,15 @@ def test_invalid_override_is_rejected() -> None:
     with pytest.raises(ValueError):
         LayoutOverrides(right_shift_width=0)
 
+
+@pytest.mark.parametrize("template", [LayoutTemplate.ANSI_65, LayoutTemplate.ANSI_75])
+def test_compact_bottom_rows_align_with_navigation(template) -> None:
+    keyboard = build(template)
+    by_id = {key.id: key for key in keyboard.keys}
+    assert by_id["arrow-up"].x == by_id["arrow-down"].x
+    assert by_id["arrow-right"].x == by_id["home"].x
+    assert by_id["right-alt"].width_u == 1
+    for row in {key.row for key in keyboard.keys if key.id != "esc"}:
+        if template == LayoutTemplate.ANSI_75 and row == 0:
+            continue
+        assert max(key.x + key.width_u for key in keyboard.keys if key.row == row) == 16.25

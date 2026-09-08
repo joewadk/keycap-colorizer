@@ -34,6 +34,7 @@ interface KeyboardSceneProps {
   selectedKeyIds: string[];
   keyColorMap: KeyColorMap;
   colors: Record<string, string>;
+  defaultColor?: string;
   onKeyClick: (keyId: string, additive: boolean) => void;
   onKeyHover?: (keyId: string | null) => void;
 }
@@ -43,6 +44,7 @@ export function KeyboardScene({
   selectedKeyIds,
   keyColorMap,
   colors,
+  defaultColor = "#D8DBD1",
   onKeyClick,
   onKeyHover,
 }: KeyboardSceneProps) {
@@ -73,7 +75,7 @@ export function KeyboardScene({
           {keyboard.keys.map((key) => {
             const transform = buildKeyTransform(key);
             const isSelected = selected.has(key.id);
-            const color = colors[keyColorMap[key.id]] ?? "#D8DBD1";
+            const color = colors[keyColorMap[key.id]] ?? defaultColor;
             return (
               <RoundedBox
                 key={key.id}

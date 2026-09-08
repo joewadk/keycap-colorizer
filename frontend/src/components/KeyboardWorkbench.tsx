@@ -3,7 +3,8 @@ import { useState } from "react";
 import { demoKeyboard } from "../data/demoKeyboard";
 import { demoKeycapSet } from "../data/demoKeycapSet";
 import { KeyboardScene } from "../renderer/KeyboardScene";
-import type { KeyboardDefinition } from "../types/domain";
+import { CompatibilityPanel } from "./CompatibilityPanel";
+import type { KeyboardDefinition, KeycapSet } from "../types/domain";
 import {
   applyColor,
   clearSelection,
@@ -13,10 +14,6 @@ import {
   selectGroup,
   selectKey,
 } from "../state/configurator";
-
-const previewColors = Object.fromEntries(
-  demoKeycapSet.colors.map((color) => [color.id, color.hex]),
-);
 
 const groups = [
   ["alphas", "Alphas"],
@@ -28,7 +25,10 @@ const groups = [
   ["entire-keyboard", "Entire board"],
 ] as const;
 
-export function KeyboardWorkbench({ keyboard = demoKeyboard }: { keyboard?: KeyboardDefinition } = {}) {
+export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKeycapSet }: {
+  keyboard?: KeyboardDefinition; keycapSet?: KeycapSet;
+} = {}) {
+  const previewColors = Object.fromEntries(keycapSet.colors.map((color) => [color.id, color.hex]));
   const [state, setState] = useState(initialConfiguratorState);
   const [hoveredKeyId, setHoveredKeyId] = useState<string | null>(null);
   const activeGroup = groups.find(([id]) => {
@@ -37,10 +37,10 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard }: { keyboard?: Keyb
       && members.every((key) => state.selectedKeyIds.includes(key.id));
   });
   const selectedColor = state.selectedKeyIds.length > 0
-    ? state.keyColorMap[state.selectedKeyIds[0]] ?? "bone"
+    ? state.keyColorMap[state.selectedKeyIds[0]] ?? keycapSet.colors[0]?.id
     : null;
   const uniformColor = selectedColor && state.selectedKeyIds.every(
-    (id) => (state.keyColorMap[id] ?? "bone") === selectedColor,
+    (id) => (state.keyColorMap[id] ?? keycapSet.colors[0]?.id) === selectedColor,
   ) ? selectedColor : null;
   const selectedLabel = state.selectedKeyIds.length <= 3
     ? state.selectedKeyIds.join(", ")
@@ -66,6 +66,7 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard }: { keyboard?: Keyb
         selectedKeyIds={state.selectedKeyIds}
         keyColorMap={state.keyColorMap}
         colors={previewColors}
+        defaultColor={keycapSet.colors[0]?.hex}
         onKeyHover={setHoveredKeyId}
         onKeyClick={(keyId, additive) => setState((current) => selectKey(current, keyId, additive))}
       />
@@ -100,9 +101,9 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard }: { keyboard?: Keyb
           </div>
         </div>
         <div>
-          <p className="control-label">{demoKeycapSet.name.toUpperCase()}</p>
+          <p className="control-label">{keycapSet.name.toUpperCase()}</p>
           <div className="swatch-row">
-            {demoKeycapSet.colors.map((color) => (
+            {keycapSet.colors.map((color) => (
               <button
                 key={color.id}
                 className="swatch"
@@ -117,7 +118,7 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard }: { keyboard?: Keyb
           </div>
           <p className="palette-feedback">
             {uniformColor
-              ? demoKeycapSet.colors.filter((color) => color.id === uniformColor).map((color) => `${color.name} · ${color.hex}`)
+              ? keycapSet.colors.filter((color) => color.id === uniformColor).map((color) => `${color.name} · ${color.hex}`)
               : state.selectedKeyIds.length ? "Mixed colors" : "Select keys to paint"}
           </p>
         </div>
@@ -139,6 +140,7 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard }: { keyboard?: Keyb
         </button>
       </div>
       <p className="interaction-hint">Click a key to select · Shift-click for multiple · Drag to orbit · Scroll to zoom</p>
+      <CompatibilityPanel keyboard={keyboard} keycapSet={keycapSet} />
     </section>
   );
 }

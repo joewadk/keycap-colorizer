@@ -10,7 +10,7 @@ test("renders first-release notes with the configured preset and writer", async 
     env: {},
     options: { repositoryUrl: "https://github.com/joewadk/keycap-colorizer.git" },
     commits: [
-      { hash: "a".repeat(40), message: "feat: add layout switching" },
+      { hash: "a".repeat(40), message: "feat: add layout switching\n\nCompare color combinations across 65%, 75%, and TKL boards.\n\n- Choose a board from the layout menu.\n- Preview your selected palette before buying keycaps." },
       { hash: "b".repeat(40), message: "fix: correct keycap colors" },
       { hash: "c".repeat(40), message: "feat!: change configuration format\n\nBREAKING CHANGE: saved layouts use stable key IDs" },
     ],
@@ -22,6 +22,11 @@ test("renders first-release notes with the configured preset and writer", async 
   assert.match(notes, /add layout switching/);
   assert.match(notes, /correct keycap colors/);
   assert.match(notes, /saved layouts use stable key IDs/);
+  assert.match(notes, /### New features/);
+  assert.match(notes, /Compare color combinations across 65%, 75%, and TKL boards\./);
+  assert.match(notes, /- Choose a board from the layout menu\./);
+  assert.match(notes, /### Fixes/);
+  assert.match(notes, /github\.com\/joewadk\/keycap-colorizer\/commit\/a{40}/);
 });
 
 for (const [message, expected] of [

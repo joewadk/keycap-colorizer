@@ -90,7 +90,7 @@ BOTTOM_COMPACT = [
     key("left-meta", "Win", 1.25),
     key("left-alt", "Alt", 1.25),
     key("space", "", 6.25),
-    key("right-alt", "Alt", 1.25),
+    key("right-alt", "Alt"),
     key("function", "Fn"),
     key("right-control", "Ctrl"),
 ]

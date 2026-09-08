@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.health import router as health_router
+from app.api.compatibility import router as compatibility_router
 from app.config import get_settings
 
 
@@ -16,8 +17,8 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
     application.include_router(health_router, prefix="/api")
+    application.include_router(compatibility_router, prefix="/api")
     return application
 
 
 app = create_app()
-

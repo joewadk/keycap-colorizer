@@ -7,6 +7,7 @@ import {
   KEY_GAP_MM,
 } from "../src/renderer/geometry";
 import type { KeyboardDefinition, KeyboardKey } from "../src/types/domain";
+import { demoKeyboard } from "../src/data/demoKeyboard";
 
 function makeKey(overrides: Partial<KeyboardKey> = {}): KeyboardKey {
   return {
@@ -24,6 +25,16 @@ function makeKey(overrides: Partial<KeyboardKey> = {}): KeyboardKey {
 }
 
 describe("keyboard geometry", () => {
+  it("aligns all 65% row ends and the inverted-T arrow cluster", () => {
+    for (let row = 0; row < 5; row++) {
+      expect(Math.max(...demoKeyboard.keys.filter((key) => key.row === row)
+        .map((key) => key.x + key.widthU))).toBe(16.25);
+    }
+    const byId = Object.fromEntries(demoKeyboard.keys.map((key) => [key.id, key]));
+    expect(byId["arrow-up"].x).toBe(byId["arrow-down"].x);
+    expect(byId["arrow-right"].x).toBe(byId.home.x);
+    expect(byId["right-alt"].widthU).toBe(1);
+  });
   it("converts a 1u key to millimeters with a physical gap", () => {
     const transform = buildKeyTransform(makeKey());
     expect(transform.size[0]).toBe(KEYBOARD_UNIT_MM - KEY_GAP_MM);
