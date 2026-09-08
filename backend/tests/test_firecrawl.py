@@ -86,7 +86,7 @@ def test_non_json_response_is_clean():
 
 
 def test_oversized_html_is_rejected():
-    with pytest.raises(IntakeError, match="5 MB"):
+    with pytest.raises(IntakeError, match="20 MB"):
         asyncio.run(loader(lambda request: httpx.Response(200, json=response(html="x" * 20_000_001))).load("https://example.com/board"))
 
 

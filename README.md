@@ -112,6 +112,14 @@ The app uses the [Firecrawl scrape API](https://docs.firecrawl.dev/api-reference
 
 Development progress is tracked in [PROGRESS.md](PROGRESS.md).
 
+Optional product understanding (Phase 8) can classify scraped evidence and identify a supported layout. To enable it, set `AI_PROVIDER=openai`, `OPENAI_API_KEY`, and `OPENAI_MODEL` in your local `.env`. Choose a model that supports [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs). Then run:
+
+```powershell
+python -m app.ingestion "https://example.com/product" --understand
+```
+
+This explicitly sends extracted page text and metadata to OpenAI and may incur API charges. Without `--understand`, scraping makes no AI calls. The adapter uses strict structured outputs with local validation, following the official OpenAI documentation. Invalid output is retried once; ambiguous products return `needs_review` with the original evidence. No model-generated coordinates reach the renderer. Image sampling, normalized-product caching, and URL-to-preview integration are still later phases; repeated `--understand` commands currently request a new analysis even when HTML is cached. The sample preview remains usable without any provider configured.
+
 See [CONTRIBUTING.md](CONTRIBUTING.md) for commit conventions and automatic GitHub releases.
 
 </details>

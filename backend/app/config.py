@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     database_path: str = "./data/products.db"
     scraper_provider: Literal["playwright", "firecrawl"] = "playwright"
     firecrawl_api_key: SecretStr = SecretStr("")
+    ai_provider: Literal["", "openai"] = ""
+    openai_api_key: SecretStr = SecretStr("")
+    openai_model: str = ""
 
     model_config = SettingsConfigDict(
         env_file=Path(__file__).resolve().parents[2] / ".env",

@@ -75,7 +75,7 @@ class FirecrawlPageLoader:
                 if not document.raw_html.strip():
                     raise IntakeError("Firecrawl returned empty HTML.")
                 if len(document.raw_html.encode("utf-8")) > 20_000_000:
-                    raise IntakeError("Product page exceeds the 5 MB extraction limit.")
+                    raise IntakeError("Product page exceeds the 20 MB extraction limit.")
                 final_url = await require_public_url(document.metadata.url or document.metadata.source_url or url)
                 return LoadedPage(document.raw_html, final_url)
         except (httpx.HTTPError, TimeoutError):

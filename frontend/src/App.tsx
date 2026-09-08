@@ -1,5 +1,6 @@
 import { ConnectionStatus } from "./components/ConnectionStatus";
 import { KeyboardWorkbench } from "./components/KeyboardWorkbench";
+import { AiStatus } from "./components/AiStatus";
 import "./styles.css";
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
         </label>
         <button disabled>Analyze products</button>
         <p className="phase-note">Product ingestion arrives in a later phase.</p>
+        <AiStatus />
       </section>
       <KeyboardWorkbench />
     </main>

@@ -2,10 +2,15 @@
 
 ## Current phase
 
-Phase 7 — Generic Product Scraping (complete; fixture-tested)
+Phase 8 — Agentic Product Understanding (complete; mocked-provider tested)
 
 ## Completed functionality
 
+- Added a provider-independent structured-model interface and optional OpenAI Responses adapter; keys stay server-side and AI is opt-in through `--understand`.
+- Added strictly validated product classification, supported layout identification, confidence, nullable features, and color names. Models cannot provide geometry or claim RGB color accuracy.
+- Added one corrected retry for malformed model data, bounded input/output, timeout/refusal handling, and evidence-preserving disabled/failed/manual-review results.
+- Added `/api/capabilities` and an AI configuration status in the intake panel. The offline sample remains usable without an AI provider.
+- Corrected Firecrawl's stale 5 MB error message to match its existing 20 MB HTML limit.
 - Created the frontend, backend, test, and local data directory structure.
 - Added a typed FastAPI `GET /api/health` endpoint and configurable CORS origin.
 - Added a React/Vite shell with local API connection status.
@@ -41,8 +46,8 @@ Phase 7 — Generic Product Scraping (complete; fixture-tested)
 
 ## Tests currently passing
 
-- Backend: 93 tests passing.
-- Frontend: 31 tests passing.
+- Backend: 127 tests passing (34 new Phase 8 cases, including strict parsing, retries, review states, provider HTTP contracts, and secret-free capabilities).
+- Frontend: 34 tests passing (including AI configuration and offline status).
 - Release: 5 tests passing.
 
 ## Prototype feedback fixes
@@ -77,7 +82,8 @@ Phase 7 — Generic Product Scraping (complete; fixture-tested)
 ## Known limitations
 
 - Product inputs are disabled until ingestion is implemented.
-- No AI, image sampling, SQLite persistence, or full URL-to-preview workflow yet. Scraping returns evidence, not normalized geometry.
+- Optional AI understanding is available through the CLI, but image sampling, SQLite persistence, and the full URL-to-preview workflow are not implemented yet. Understanding returns validated facts, not normalized geometry.
+- Live AI integration has not been exercised; tests mock all provider calls. Set a structured-output-capable OPENAI_MODEL explicitly. Each `--understand` invocation currently requests analysis again; normalized-product/analysis caching is deferred to persistence/workflow integration.
 - Live browser scraping requires `python -m playwright install chromium`. Browser lifecycle and downloads are mocked in the normal tests; no live vendor website verification has been performed.
 - Generic extraction may include unrelated image/variant candidates and misses stylesheet-controlled visibility. Blocked pages, logins, and CAPTCHAs surface failures; no bypass is attempted.
 - Sample palette inventory is unspecified, so its fit is unknown. Checks assess supplied inventory only; stem fit and row profile are not verified. Vertical keys need height evidence absent from the initial SupportedKey model.
@@ -86,4 +92,4 @@ Phase 7 — Generic Product Scraping (complete; fixture-tested)
 
 ## Next implementation target
 
-Implement Phase 8 optional structured AI adapters with schema validation and mocked responses.
+Phase 9: deterministic image-based palette sampling with image fixtures, confidence, and explicit approximate-color labeling. Then Phase 10 persistence and Phase 11 URL-to-preview/save/restore integration.
