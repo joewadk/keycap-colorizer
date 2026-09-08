@@ -39,6 +39,8 @@ Phase 5 — Keycap Palettes (complete; playable offline prototype)
 
 ## Prototype feedback fixes
 
+- Fixed release-note generation by using Conventional Commits preset 9 with the release-notes generator's writer 8 dependency. All 5 release tests pass, including rendering first-release notes with features, fixes, and breaking changes.
+
 - Release dependency consolidation is pending `npm install` in frontend: online installation was declined and the offline cache was incomplete. Until the frontend lockfile is regenerated, CI `npm ci` cannot pass with the new release dependencies.
 
 - Configured semantic-release for main pushes after tests/build pass, with Conventional Commit analysis and GitHub tags/release notes. Release tooling shares frontend dependencies and lockfile. Added contributor guidance and release-rule tests. Live release verification requires a GitHub remote.

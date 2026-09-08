@@ -1,7 +1,28 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { analyzeCommits } from "@semantic-release/commit-analyzer";
+import { generateNotes } from "@semantic-release/release-notes-generator";
 import config from "../release.config.cjs";
+
+test("renders first-release notes with the configured preset and writer", async () => {
+  const notes = await generateNotes(config.plugins[1][1], {
+    cwd: process.cwd(),
+    env: {},
+    options: { repositoryUrl: "https://github.com/joewadk/keycap-colorizer.git" },
+    commits: [
+      { hash: "a".repeat(40), message: "feat: add layout switching" },
+      { hash: "b".repeat(40), message: "fix: correct keycap colors" },
+      { hash: "c".repeat(40), message: "feat!: change configuration format\n\nBREAKING CHANGE: saved layouts use stable key IDs" },
+    ],
+    lastRelease: {},
+    nextRelease: { version: "1.0.0", gitTag: "v1.0.0", gitHead: "c".repeat(40) },
+    logger: { log() {} },
+  });
+  assert.match(notes, /1\.0\.0/);
+  assert.match(notes, /add layout switching/);
+  assert.match(notes, /correct keycap colors/);
+  assert.match(notes, /saved layouts use stable key IDs/);
+});
 
 for (const [message, expected] of [
   ["fix: correct keycap colors", "patch"],

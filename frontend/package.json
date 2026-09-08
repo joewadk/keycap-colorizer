@@ -25,15 +25,15 @@
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/github": "^12.0.9",
     "@semantic-release/release-notes-generator": "^14.1.1",
-    "conventional-changelog-conventionalcommits": "^10.4.0",
-    "semantic-release": "^25.0.9",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/three": "^0.185.4",
+    "conventional-changelog-conventionalcommits": "^9.3.1",
     "jsdom": "^26.1.0",
+    "semantic-release": "^25.0.9",
     "typescript": "latest",
     "vitest": "latest"
   }
