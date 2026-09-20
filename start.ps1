@@ -1,4 +1,4 @@
-param([string]$Node = "node")
+param([string]$Node = "node", [switch]$CheckOnly)
 
 $ErrorActionPreference = "Stop"
 $backendDir = Join-Path $PSScriptRoot "backend"
@@ -9,6 +9,19 @@ if (-not (Test-Path -LiteralPath $venvPython) -or
     throw "Dependencies are missing. Run .\install.ps1 first."
 }
 $nodeCommand = (Get-Command $Node -ErrorAction Stop).Source
+# Avoid embedded quotes: Windows PowerShell 5 strips them from native arguments.
+& $nodeCommand -e 'if (parseInt(process.versions.node) < 24) process.exit(1)'
+if ($LASTEXITCODE -ne 0) { throw "Node.js check failed. Install Node.js 24+ or pass -Node with its executable path." }
+Push-Location -LiteralPath $backendDir
+try {
+    & $venvPython -m app.startup
+    if ($LASTEXITCODE -ne 0) { throw "Startup checks failed. Fix the issue above, then try again." }
+}
+finally { Pop-Location }
+if ($CheckOnly) {
+    Write-Host "Startup checks passed. No services started."
+    return
+}
 $jobs = @()
 try {
     $jobs += Start-Job -ArgumentList $backendDir, $venvPython -ScriptBlock {
@@ -25,9 +38,12 @@ try {
     }
     Write-Host "Starting services. Open http://localhost:5173 when Vite reports ready."
     Write-Host "Press Ctrl+C to stop both services."
+    Write-Host "Save design / Load saved designs are available below the preview. Product URL intake is not connected yet."
     while ($true) {
         foreach ($job in $jobs) {
-            Receive-Job $job
+            # Native stderr (including Uvicorn INFO logs) becomes an error record in
+            # Windows PowerShell. Display it as text; job state below determines failure.
+            Receive-Job $job -ErrorAction Continue 2>&1 | ForEach-Object { Write-Host $_.ToString() }
             if ($job.State -in @("Completed", "Failed", "Stopped")) {
                 throw "A service stopped. See its output above."
             }

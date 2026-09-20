@@ -93,3 +93,12 @@ def test_compact_bottom_rows_align_with_navigation(template) -> None:
         if template == LayoutTemplate.ANSI_75 and row == 0:
             continue
         assert max(key.x + key.width_u for key in keyboard.keys if key.row == row) == 16.25
+
+
+@pytest.mark.parametrize("template,edge", [(LayoutTemplate.ANSI_75, 16.25), (LayoutTemplate.ANSI_TKL, 19.25)])
+def test_function_row_aligns_with_right_edge(template, edge):
+    keyboard = build(template)
+    assert max(key.x + key.width_u for key in keyboard.keys if key.row == 0) == edge
+    if template == LayoutTemplate.ANSI_TKL:
+        by_id = {key.id: key for key in keyboard.keys}
+        assert by_id["print-screen"].x == by_id["insert"].x

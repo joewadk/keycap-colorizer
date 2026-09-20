@@ -1,5 +1,5 @@
 import { ConnectionStatus } from "./components/ConnectionStatus";
-import { KeyboardWorkbench } from "./components/KeyboardWorkbench";
+import { SavedWorkbench } from "./components/SavedWorkbench";
 import { AiStatus } from "./components/AiStatus";
 import "./styles.css";
 
@@ -36,7 +36,7 @@ export default function App() {
         <p className="phase-note">Product ingestion arrives in a later phase.</p>
         <AiStatus />
       </section>
-      <KeyboardWorkbench />
+      <SavedWorkbench />
     </main>
   );
 }

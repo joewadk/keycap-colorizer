@@ -1,0 +1,2406 @@
+[
+  {
+    "id": "preset-ansi-75-v1",
+    "manufacturer": "Local Preset",
+    "model": "ANSI 75 Preview",
+    "layoutType": "75",
+    "case": {
+      "color": "#24282A",
+      "material": null,
+      "widthMm": 319.08750000000003,
+      "depthMm": 123.825,
+      "heightMm": null,
+      "cornerRadiusMm": 6.0
+    },
+    "keys": [
+      {
+        "id": "esc",
+        "legend": "Esc",
+        "row": 0,
+        "x": 0.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f1",
+        "legend": "F1",
+        "row": 0,
+        "x": 1.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f2",
+        "legend": "F2",
+        "row": 0,
+        "x": 2.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f3",
+        "legend": "F3",
+        "row": 0,
+        "x": 3.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f4",
+        "legend": "F4",
+        "row": 0,
+        "x": 4.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f5",
+        "legend": "F5",
+        "row": 0,
+        "x": 5.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f6",
+        "legend": "F6",
+        "row": 0,
+        "x": 6.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f7",
+        "legend": "F7",
+        "row": 0,
+        "x": 7.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f8",
+        "legend": "F8",
+        "row": 0,
+        "x": 8.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f9",
+        "legend": "F9",
+        "row": 0,
+        "x": 9.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f10",
+        "legend": "F10",
+        "row": 0,
+        "x": 10.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f11",
+        "legend": "F11",
+        "row": 0,
+        "x": 11.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f12",
+        "legend": "F12",
+        "row": 0,
+        "x": 12.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "print-screen",
+        "legend": "PrtSc",
+        "row": 0,
+        "x": 13.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "insert",
+        "legend": "Ins",
+        "row": 0,
+        "x": 14.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "delete",
+        "legend": "Del",
+        "row": 0,
+        "x": 15.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "grave",
+        "legend": "`",
+        "row": 1,
+        "x": 0.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-1",
+        "legend": "1",
+        "row": 1,
+        "x": 1.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-2",
+        "legend": "2",
+        "row": 1,
+        "x": 2.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-3",
+        "legend": "3",
+        "row": 1,
+        "x": 3.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-4",
+        "legend": "4",
+        "row": 1,
+        "x": 4.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-5",
+        "legend": "5",
+        "row": 1,
+        "x": 5.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-6",
+        "legend": "6",
+        "row": 1,
+        "x": 6.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-7",
+        "legend": "7",
+        "row": 1,
+        "x": 7.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-8",
+        "legend": "8",
+        "row": 1,
+        "x": 8.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-9",
+        "legend": "9",
+        "row": 1,
+        "x": 9.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-0",
+        "legend": "0",
+        "row": 1,
+        "x": 10.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "minus",
+        "legend": "-",
+        "row": 1,
+        "x": 11.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "equal",
+        "legend": "=",
+        "row": 1,
+        "x": 12.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "backspace",
+        "legend": "Backspace",
+        "row": 1,
+        "x": 13.0,
+        "y": 1.0,
+        "widthU": 2.0,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "home",
+        "legend": "Home",
+        "row": 1,
+        "x": 15.25,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "tab",
+        "legend": "Tab",
+        "row": 2,
+        "x": 0.0,
+        "y": 2.0,
+        "widthU": 1.5,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "q",
+        "legend": "Q",
+        "row": 2,
+        "x": 1.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "w",
+        "legend": "W",
+        "row": 2,
+        "x": 2.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "e",
+        "legend": "E",
+        "row": 2,
+        "x": 3.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "r",
+        "legend": "R",
+        "row": 2,
+        "x": 4.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "t",
+        "legend": "T",
+        "row": 2,
+        "x": 5.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "y",
+        "legend": "Y",
+        "row": 2,
+        "x": 6.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "u",
+        "legend": "U",
+        "row": 2,
+        "x": 7.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "i",
+        "legend": "I",
+        "row": 2,
+        "x": 8.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "o",
+        "legend": "O",
+        "row": 2,
+        "x": 9.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "p",
+        "legend": "P",
+        "row": 2,
+        "x": 10.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "bracket-left",
+        "legend": "[",
+        "row": 2,
+        "x": 11.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "bracket-right",
+        "legend": "]",
+        "row": 2,
+        "x": 12.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "backslash",
+        "legend": "\\",
+        "row": 2,
+        "x": 13.5,
+        "y": 2.0,
+        "widthU": 1.5,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "page-up",
+        "legend": "PgUp",
+        "row": 2,
+        "x": 15.25,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "caps-lock",
+        "legend": "Caps",
+        "row": 3,
+        "x": 0.0,
+        "y": 3.0,
+        "widthU": 1.75,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "a",
+        "legend": "A",
+        "row": 3,
+        "x": 1.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "s",
+        "legend": "S",
+        "row": 3,
+        "x": 2.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "d",
+        "legend": "D",
+        "row": 3,
+        "x": 3.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "f",
+        "legend": "F",
+        "row": 3,
+        "x": 4.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "g",
+        "legend": "G",
+        "row": 3,
+        "x": 5.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "h",
+        "legend": "H",
+        "row": 3,
+        "x": 6.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "j",
+        "legend": "J",
+        "row": 3,
+        "x": 7.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "k",
+        "legend": "K",
+        "row": 3,
+        "x": 8.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "l",
+        "legend": "L",
+        "row": 3,
+        "x": 9.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "semicolon",
+        "legend": ";",
+        "row": 3,
+        "x": 10.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "quote",
+        "legend": "'",
+        "row": 3,
+        "x": 11.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "enter",
+        "legend": "Enter",
+        "row": 3,
+        "x": 12.75,
+        "y": 3.0,
+        "widthU": 2.25,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "page-down",
+        "legend": "PgDn",
+        "row": 3,
+        "x": 15.25,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "left-shift",
+        "legend": "Shift",
+        "row": 4,
+        "x": 0.0,
+        "y": 4.0,
+        "widthU": 2.25,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "z",
+        "legend": "Z",
+        "row": 4,
+        "x": 2.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "x",
+        "legend": "X",
+        "row": 4,
+        "x": 3.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "c",
+        "legend": "C",
+        "row": 4,
+        "x": 4.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "v",
+        "legend": "V",
+        "row": 4,
+        "x": 5.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "b",
+        "legend": "B",
+        "row": 4,
+        "x": 6.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "n",
+        "legend": "N",
+        "row": 4,
+        "x": 7.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "m",
+        "legend": "M",
+        "row": 4,
+        "x": 8.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "comma",
+        "legend": ",",
+        "row": 4,
+        "x": 9.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "period",
+        "legend": ".",
+        "row": 4,
+        "x": 10.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "slash",
+        "legend": "/",
+        "row": 4,
+        "x": 11.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "right-shift",
+        "legend": "Shift",
+        "row": 4,
+        "x": 12.25,
+        "y": 4.0,
+        "widthU": 1.75,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "arrow-up",
+        "legend": "\u2191",
+        "row": 4,
+        "x": 14.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      },
+      {
+        "id": "end",
+        "legend": "End",
+        "row": 4,
+        "x": 15.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "left-control",
+        "legend": "Ctrl",
+        "row": 5,
+        "x": 0.0,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "left-meta",
+        "legend": "Win",
+        "row": 5,
+        "x": 1.25,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "left-alt",
+        "legend": "Alt",
+        "row": 5,
+        "x": 2.5,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "space",
+        "legend": "",
+        "row": 5,
+        "x": 3.75,
+        "y": 5.0,
+        "widthU": 6.25,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "right-alt",
+        "legend": "Alt",
+        "row": 5,
+        "x": 10.0,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "function",
+        "legend": "Fn",
+        "row": 5,
+        "x": 11.0,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "right-control",
+        "legend": "Ctrl",
+        "row": 5,
+        "x": 12.0,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "arrow-left",
+        "legend": "\u2190",
+        "row": 5,
+        "x": 13.25,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      },
+      {
+        "id": "arrow-down",
+        "legend": "\u2193",
+        "row": 5,
+        "x": 14.25,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      },
+      {
+        "id": "arrow-right",
+        "legend": "\u2192",
+        "row": 5,
+        "x": 15.25,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      }
+    ],
+    "features": {
+      "knob": false,
+      "screen": false,
+      "badge": false
+    },
+    "sourceUrl": "https://example.com/presets/ansi_75/v1"
+  },
+  {
+    "id": "preset-ansi-tkl-v1",
+    "manufacturer": "Local Preset",
+    "model": "ANSI TKL Preview",
+    "layoutType": "TKL",
+    "case": {
+      "color": "#24282A",
+      "material": null,
+      "widthMm": 376.2375,
+      "depthMm": 123.825,
+      "heightMm": null,
+      "cornerRadiusMm": 6.0
+    },
+    "keys": [
+      {
+        "id": "esc",
+        "legend": "Esc",
+        "row": 0,
+        "x": 0.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f1",
+        "legend": "F1",
+        "row": 0,
+        "x": 2.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f2",
+        "legend": "F2",
+        "row": 0,
+        "x": 3.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f3",
+        "legend": "F3",
+        "row": 0,
+        "x": 4.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f4",
+        "legend": "F4",
+        "row": 0,
+        "x": 5.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f5",
+        "legend": "F5",
+        "row": 0,
+        "x": 6.5,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f6",
+        "legend": "F6",
+        "row": 0,
+        "x": 7.5,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f7",
+        "legend": "F7",
+        "row": 0,
+        "x": 8.5,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f8",
+        "legend": "F8",
+        "row": 0,
+        "x": 9.5,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f9",
+        "legend": "F9",
+        "row": 0,
+        "x": 11.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f10",
+        "legend": "F10",
+        "row": 0,
+        "x": 12.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f11",
+        "legend": "F11",
+        "row": 0,
+        "x": 13.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "f12",
+        "legend": "F12",
+        "row": 0,
+        "x": 14.0,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "function-row"
+        ]
+      },
+      {
+        "id": "print-screen",
+        "legend": "PrtSc",
+        "row": 0,
+        "x": 16.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "scroll-lock",
+        "legend": "Scroll",
+        "row": 0,
+        "x": 17.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "pause",
+        "legend": "Pause",
+        "row": 0,
+        "x": 18.25,
+        "y": 0.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "grave",
+        "legend": "`",
+        "row": 1,
+        "x": 0.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-1",
+        "legend": "1",
+        "row": 1,
+        "x": 1.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-2",
+        "legend": "2",
+        "row": 1,
+        "x": 2.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-3",
+        "legend": "3",
+        "row": 1,
+        "x": 3.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-4",
+        "legend": "4",
+        "row": 1,
+        "x": 4.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-5",
+        "legend": "5",
+        "row": 1,
+        "x": 5.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-6",
+        "legend": "6",
+        "row": 1,
+        "x": 6.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-7",
+        "legend": "7",
+        "row": 1,
+        "x": 7.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-8",
+        "legend": "8",
+        "row": 1,
+        "x": 8.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-9",
+        "legend": "9",
+        "row": 1,
+        "x": 9.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "digit-0",
+        "legend": "0",
+        "row": 1,
+        "x": 10.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "minus",
+        "legend": "-",
+        "row": 1,
+        "x": 11.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "equal",
+        "legend": "=",
+        "row": 1,
+        "x": 12.0,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "backspace",
+        "legend": "Backspace",
+        "row": 1,
+        "x": 13.0,
+        "y": 1.0,
+        "widthU": 2.0,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "insert",
+        "legend": "Ins",
+        "row": 1,
+        "x": 16.25,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "home",
+        "legend": "Home",
+        "row": 1,
+        "x": 17.25,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "page-up",
+        "legend": "PgUp",
+        "row": 1,
+        "x": 18.25,
+        "y": 1.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "tab",
+        "legend": "Tab",
+        "row": 2,
+        "x": 0.0,
+        "y": 2.0,
+        "widthU": 1.5,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "q",
+        "legend": "Q",
+        "row": 2,
+        "x": 1.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "w",
+        "legend": "W",
+        "row": 2,
+        "x": 2.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "e",
+        "legend": "E",
+        "row": 2,
+        "x": 3.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "r",
+        "legend": "R",
+        "row": 2,
+        "x": 4.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "t",
+        "legend": "T",
+        "row": 2,
+        "x": 5.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "y",
+        "legend": "Y",
+        "row": 2,
+        "x": 6.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "u",
+        "legend": "U",
+        "row": 2,
+        "x": 7.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "i",
+        "legend": "I",
+        "row": 2,
+        "x": 8.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "o",
+        "legend": "O",
+        "row": 2,
+        "x": 9.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "p",
+        "legend": "P",
+        "row": 2,
+        "x": 10.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "bracket-left",
+        "legend": "[",
+        "row": 2,
+        "x": 11.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "bracket-right",
+        "legend": "]",
+        "row": 2,
+        "x": 12.5,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "backslash",
+        "legend": "\\",
+        "row": 2,
+        "x": 13.5,
+        "y": 2.0,
+        "widthU": 1.5,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "delete",
+        "legend": "Del",
+        "row": 2,
+        "x": 16.25,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "end",
+        "legend": "End",
+        "row": 2,
+        "x": 17.25,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "page-down",
+        "legend": "PgDn",
+        "row": 2,
+        "x": 18.25,
+        "y": 2.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "navigation-cluster"
+        ]
+      },
+      {
+        "id": "caps-lock",
+        "legend": "Caps",
+        "row": 3,
+        "x": 0.0,
+        "y": 3.0,
+        "widthU": 1.75,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "a",
+        "legend": "A",
+        "row": 3,
+        "x": 1.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "s",
+        "legend": "S",
+        "row": 3,
+        "x": 2.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "d",
+        "legend": "D",
+        "row": 3,
+        "x": 3.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas",
+          "wasd"
+        ]
+      },
+      {
+        "id": "f",
+        "legend": "F",
+        "row": 3,
+        "x": 4.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "g",
+        "legend": "G",
+        "row": 3,
+        "x": 5.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "h",
+        "legend": "H",
+        "row": 3,
+        "x": 6.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "j",
+        "legend": "J",
+        "row": 3,
+        "x": 7.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "k",
+        "legend": "K",
+        "row": 3,
+        "x": 8.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "l",
+        "legend": "L",
+        "row": 3,
+        "x": 9.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "semicolon",
+        "legend": ";",
+        "row": 3,
+        "x": 10.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "quote",
+        "legend": "'",
+        "row": 3,
+        "x": 11.75,
+        "y": 3.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "enter",
+        "legend": "Enter",
+        "row": 3,
+        "x": 12.75,
+        "y": 3.0,
+        "widthU": 2.25,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "left-shift",
+        "legend": "Shift",
+        "row": 4,
+        "x": 0.0,
+        "y": 4.0,
+        "widthU": 2.25,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "z",
+        "legend": "Z",
+        "row": 4,
+        "x": 2.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "x",
+        "legend": "X",
+        "row": 4,
+        "x": 3.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "c",
+        "legend": "C",
+        "row": 4,
+        "x": 4.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "v",
+        "legend": "V",
+        "row": 4,
+        "x": 5.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "b",
+        "legend": "B",
+        "row": 4,
+        "x": 6.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "n",
+        "legend": "N",
+        "row": 4,
+        "x": 7.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "m",
+        "legend": "M",
+        "row": 4,
+        "x": 8.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "alphas"
+        ]
+      },
+      {
+        "id": "comma",
+        "legend": ",",
+        "row": 4,
+        "x": 9.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "period",
+        "legend": ".",
+        "row": 4,
+        "x": 10.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "slash",
+        "legend": "/",
+        "row": 4,
+        "x": 11.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard"
+        ]
+      },
+      {
+        "id": "right-shift",
+        "legend": "Shift",
+        "row": 4,
+        "x": 12.25,
+        "y": 4.0,
+        "widthU": 2.75,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "arrow-up",
+        "legend": "\u2191",
+        "row": 4,
+        "x": 17.25,
+        "y": 4.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      },
+      {
+        "id": "left-control",
+        "legend": "Ctrl",
+        "row": 5,
+        "x": 0.0,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "left-meta",
+        "legend": "Win",
+        "row": 5,
+        "x": 1.25,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "left-alt",
+        "legend": "Alt",
+        "row": 5,
+        "x": 2.5,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "space",
+        "legend": "",
+        "row": 5,
+        "x": 3.75,
+        "y": 5.0,
+        "widthU": 6.25,
+        "heightU": 1.0,
+        "stabilizer": true,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "right-alt",
+        "legend": "Alt",
+        "row": 5,
+        "x": 10.0,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "right-meta",
+        "legend": "Win",
+        "row": 5,
+        "x": 11.25,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "menu",
+        "legend": "Menu",
+        "row": 5,
+        "x": 12.5,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "right-control",
+        "legend": "Ctrl",
+        "row": 5,
+        "x": 13.75,
+        "y": 5.0,
+        "widthU": 1.25,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "modifiers"
+        ]
+      },
+      {
+        "id": "arrow-left",
+        "legend": "\u2190",
+        "row": 5,
+        "x": 16.25,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      },
+      {
+        "id": "arrow-down",
+        "legend": "\u2193",
+        "row": 5,
+        "x": 17.25,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      },
+      {
+        "id": "arrow-right",
+        "legend": "\u2192",
+        "row": 5,
+        "x": 18.25,
+        "y": 5.0,
+        "widthU": 1.0,
+        "heightU": 1.0,
+        "stabilizer": false,
+        "group": [
+          "entire-keyboard",
+          "arrow-keys"
+        ]
+      }
+    ],
+    "features": {
+      "knob": false,
+      "screen": false,
+      "badge": false
+    },
+    "sourceUrl": "https://example.com/presets/ansi_tkl/v1"
+  }
+]

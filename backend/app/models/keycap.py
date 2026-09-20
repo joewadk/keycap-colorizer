@@ -22,6 +22,7 @@ class KeycapProfile(StrEnum):
 
 
 class ColorSource(StrEnum):
+    PRESET = "preset"
     MANUFACTURER = "manufacturer"
     IMAGE_SAMPLE = "image_sample"
     MODEL_ESTIMATE = "model_estimate"
@@ -68,4 +69,3 @@ class KeycapSet(DomainModel):
         if len(color_ids) != len(set(color_ids)):
             raise ValueError("keycap color IDs must be unique")
         return self
-

@@ -99,13 +99,13 @@ FUNCTION_ROW_TKL = [
     key("esc", "Esc"), gap(1),
     *[key(f"f{i}", f"F{i}") for i in range(1, 5)], gap(0.5),
     *[key(f"f{i}", f"F{i}") for i in range(5, 9)], gap(0.5),
-    *[key(f"f{i}", f"F{i}") for i in range(9, 13)], gap(0.25),
+    *[key(f"f{i}", f"F{i}") for i in range(9, 13)], gap(1.25),
     key("print-screen", "PrtSc"), key("scroll-lock", "Scroll"), key("pause", "Pause"),
 ]
 FUNCTION_ROW_75 = [
-    key("esc", "Esc"), gap(0.5),
-    *[key(f"f{i}", f"F{i}") for i in range(1, 5)], gap(0.25),
-    *[key(f"f{i}", f"F{i}") for i in range(5, 9)], gap(0.25),
+    key("esc", "Esc"), gap(0.25),
+    *[key(f"f{i}", f"F{i}") for i in range(1, 5)],
+    *[key(f"f{i}", f"F{i}") for i in range(5, 9)],
     *[key(f"f{i}", f"F{i}") for i in range(9, 13)],
     key("print-screen", "PrtSc"), key("insert", "Ins"), key("delete", "Del"),
 ]

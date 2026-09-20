@@ -39,7 +39,7 @@ export interface KeyboardDefinition {
 }
 
 export type KeycapProfile = "Cherry" | "OEM" | "XDA" | "DSA" | "SA" | "Unknown";
-export type ColorSource = "manufacturer" | "image_sample" | "model_estimate";
+export type ColorSource = "manufacturer" | "image_sample" | "model_estimate" | "preset";
 
 export interface KeycapColor {
   id: string;
@@ -68,6 +68,7 @@ export interface KeycapSet {
 export type KeyColorMap = Record<string, string>;
 
 export interface Configuration {
+  caseColor?: string | null;
   id: string;
   keyboardId: string;
   keycapSetId: string;

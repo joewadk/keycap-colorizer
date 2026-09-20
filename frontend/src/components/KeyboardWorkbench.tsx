@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { demoKeyboard } from "../data/demoKeyboard";
 import { demoKeycapSet } from "../data/demoKeycapSet";
 import { KeyboardScene } from "../renderer/KeyboardScene";
 import { CompatibilityPanel } from "./CompatibilityPanel";
-import type { KeyboardDefinition, KeycapSet } from "../types/domain";
+import type { KeyboardDefinition, KeycapSet, KeyColorMap } from "../types/domain";
 import {
   applyColor,
   clearSelection,
@@ -25,11 +25,14 @@ const groups = [
   ["entire-keyboard", "Entire board"],
 ] as const;
 
-export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKeycapSet }: {
+export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKeycapSet, initialColorMap, onColorMapChange, caseColor }: {
   keyboard?: KeyboardDefinition; keycapSet?: KeycapSet;
+  initialColorMap?: KeyColorMap; onColorMapChange?: (colors: KeyColorMap) => void;
+  caseColor?: string;
 } = {}) {
   const previewColors = Object.fromEntries(keycapSet.colors.map((color) => [color.id, color.hex]));
-  const [state, setState] = useState(initialConfiguratorState);
+  const [state, setState] = useState(() => ({ ...initialConfiguratorState, keyColorMap: initialColorMap ?? {} }));
+  useEffect(() => { onColorMapChange?.(state.keyColorMap); }, [state.keyColorMap, onColorMapChange]);
   const [hoveredKeyId, setHoveredKeyId] = useState<string | null>(null);
   const activeGroup = groups.find(([id]) => {
     const members = keyboard.keys.filter((key) => key.group.includes(id));
@@ -50,7 +53,7 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKey
     <section className="workbench" aria-labelledby="preview-title">
       <div className="workbench-heading">
         <div>
-          <p className="eyebrow">INTERACTIVE FIXTURE</p>
+          <p className="eyebrow">INTERACTIVE PREVIEW</p>
           <h2 id="preview-title">{keyboard.model}</h2>
         </div>
         <div className="selection-feedback">
@@ -62,7 +65,7 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKey
       </div>
 
       <KeyboardScene
-        keyboard={keyboard}
+        keyboard={caseColor ? { ...keyboard, case: { ...keyboard.case, color: caseColor } } : keyboard}
         selectedKeyIds={state.selectedKeyIds}
         keyColorMap={state.keyColorMap}
         colors={previewColors}
@@ -104,8 +107,7 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKey
           <p className="control-label">{keycapSet.name.toUpperCase()}</p>
           <div className="swatch-row">
             {keycapSet.colors.map((color) => (
-              <button
-                key={color.id}
+              <div className="swatch-option" key={color.id}><button
                 className="swatch"
                 style={{ backgroundColor: color.hex }}
                 aria-label={`Apply ${color.name}`}
@@ -113,9 +115,11 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKey
                 title={`${color.name} · ${color.hex}`}
                 disabled={state.selectedKeyIds.length === 0}
                 onClick={() => setState((current) => applyColor(current, color.id))}
-              />
+              /><span>{color.name}</span></div>
             ))}
           </div>
+          {keycapSet.colors.some((color) => color.source === "preset") &&
+            <p className="palette-feedback">Generic preset colors · product availability and fit are not verified.</p>}
           <p className="palette-feedback">
             {uniformColor
               ? keycapSet.colors.filter((color) => color.id === uniformColor).map((color) => `${color.name} · ${color.hex}`)
