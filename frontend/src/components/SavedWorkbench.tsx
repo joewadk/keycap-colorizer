@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { ProductPatch } from "../api/photoReview";
 import { demoKeyboard } from "../data/demoKeyboard";
 import { demoKeycapSet } from "../data/demoKeycapSet";
 import type { Configuration, KeyboardDefinition, KeycapSet, KeyColorMap } from "../types/domain";
@@ -7,10 +8,17 @@ import { adaptColors, draftKey } from "../state/presets";
 import { listDesigns, restoreDesign, saveDesign } from "../api/storage";
 import { KeyboardWorkbench } from "./KeyboardWorkbench";
 
-export function SavedWorkbench() {
-  const [products, setProducts] = useState({ keyboard: demoKeyboard, keycapSet: demoKeycapSet, revision: 0 });
+interface SavedWorkbenchProps {
+  incoming?: ProductPatch | null;
+  initialKeyboard?: KeyboardDefinition;
+  initialKeycapSet?: KeycapSet;
+  onKeyboardChange?: (keyboard: KeyboardDefinition) => void;
+}
+
+export function SavedWorkbench({ initialKeyboard = demoKeyboard, initialKeycapSet = demoKeycapSet, incoming, onKeyboardChange }: SavedWorkbenchProps) {
+  const [products, setProducts] = useState({ keyboard: initialKeyboard, keycapSet: initialKeycapSet, revision: 0 });
   const [keyColorMap, setKeyColorMap] = useState<KeyColorMap>({});
-  const [caseColor, setCaseColor] = useState(demoKeyboard.case.color);
+  const [caseColor, setCaseColor] = useState(initialKeyboard.case.color);
   const [drafts, setDrafts] = useState<Record<string, KeyColorMap>>({});
   const [name, setName] = useState("");
   const [designs, setDesigns] = useState<Configuration[]>([]);
@@ -18,6 +26,25 @@ export function SavedWorkbench() {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("Designs are saved locally by the backend. Painting works even when it is offline.");
   const [error, setError] = useState(false);
+
+  useEffect(() => { onKeyboardChange?.(products.keyboard); }, [products.keyboard, onKeyboardChange]);
+
+  useEffect(() => {
+    if (!incoming) return;
+    if (incoming.targetKeyboardId && incoming.targetKeyboardId !== products.keyboard.id) {
+      setError(true); setMessage("The board changed during photo review. Review per-key assignments for the current layout before applying."); return;
+    }
+    const keyboard = incoming.keyboard ?? products.keyboard;
+    const keycapSet = incoming.keycapSet ?? products.keycapSet;
+    const validKeys = new Set(keyboard.keys.map((key) => key.id));
+    const validColors = new Set(keycapSet.colors.map((color) => color.id));
+    const reviewed = Object.fromEntries(Object.entries(incoming.keyColorMap ?? {}).filter(([key, color]) => validKeys.has(key) && validColors.has(color)));
+    setKeyColorMap({ ...adaptColors(keyColorMap, products.keycapSet, keycapSet, keyboard), ...reviewed });
+    setProducts({ keyboard, keycapSet, revision: products.revision + 1 });
+    if (incoming.caseColor) setCaseColor(incoming.caseColor);
+    setError(false);
+    setMessage("Reviewed product applied. Matching painted colors were retained. Save to keep this combination.");
+  }, [incoming]);
 
   async function perform(action: () => Promise<void>) {
     setBusy(true);

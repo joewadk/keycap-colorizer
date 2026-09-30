@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { ConnectionStatus } from "./components/ConnectionStatus";
 import { SavedWorkbench } from "./components/SavedWorkbench";
 import { AiStatus } from "./components/AiStatus";
+import { PhotoIntake } from "./components/PhotoIntake";
+import type { ProductPatch } from "./api/photoReview";
+import { demoKeyboard } from "./data/demoKeyboard";
 import "./styles.css";
 
 export default function App() {
+  const [intake, setIntake] = useState<ProductPatch | null>(null);
+  const [keyboard, setKeyboard] = useState(demoKeyboard);
   return (
     <main className="app-shell">
       <section className="hero compact-hero">
@@ -16,27 +22,9 @@ export default function App() {
         <ConnectionStatus />
       </section>
 
-      <section className="intake" aria-labelledby="intake-title">
-        <header>
-          <span>01</span>
-          <div>
-            <p className="eyebrow">PRODUCT INTAKE</p>
-            <h2 id="intake-title">Start with two links</h2>
-          </div>
-        </header>
-        <label>
-          Keyboard product URL
-          <input type="url" placeholder="https://…" disabled />
-        </label>
-        <label>
-          Keycap product URL
-          <input type="url" placeholder="https://…" disabled />
-        </label>
-        <button disabled>Analyze products</button>
-        <p className="phase-note">Product ingestion arrives in a later phase.</p>
-        <AiStatus />
-      </section>
-      <SavedWorkbench />
+      <AiStatus />
+      <PhotoIntake onApply={setIntake} keyboard={keyboard} />
+      <SavedWorkbench incoming={intake} onKeyboardChange={setKeyboard} />
     </main>
   );
 }

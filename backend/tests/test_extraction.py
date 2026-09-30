@@ -8,6 +8,13 @@ from app.ingestion.urls import IntakeError, normalize_url
 FIXTURES = Path(__file__).parent / "fixtures"
 
 
+def test_all_unique_image_candidates_are_retained_beyond_thirty():
+    html = "<main>" + "".join(f'<img src="/photo-{i}.png">' for i in range(125)) + '<img src="/photo-0.png"></main>'
+    page = extract_page(html, "https://example.com/caps")
+    assert len(page.images) == 125
+    assert page.images[-1].url == "https://example.com/photo-124.png"
+
+
 def test_keyboard_metadata_specifications_and_images():
     page = extract_page((FIXTURES / "keyboard_product.html").read_text(), "https://example.com/board")
     assert page.title == "Compact 75 Keyboard"

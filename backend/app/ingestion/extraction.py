@@ -108,7 +108,7 @@ def extract_page(html: str, source_url: str, final_url: str | None = None) -> Pa
         if description:
             evidence.specifications.append(Specification(name=term.get_text(" ", strip=True), value=description.get_text(" ", strip=True)))
 
-    evidence.images = evidence.images[:30]
+    # Retain every distinct candidate; image bytes are fetched lazily with safe size limits.
     evidence.text_excerpt = content.get_text(" ", strip=True)[:20000]
     if not evidence.title:
         evidence.warnings.append("Page title is missing.")

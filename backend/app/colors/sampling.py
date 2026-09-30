@@ -76,6 +76,11 @@ def sample_image(path: Path, *, crop: Crop | None = None, max_colors: int = 6) -
     if isinstance(max_colors, bool) or not isinstance(max_colors, int) or not 1 <= max_colors <= 12:
         raise SamplingError("max_colors must be an integer between 1 and 12.")
     image = _decode(path, crop or Crop())
+    return sample_pixels(image, max_colors=max_colors, cropped=crop is not None)
+
+
+def sample_pixels(image: Image.Image, *, max_colors: int = 6, cropped: bool = True) -> PaletteResult:
+    """Cluster an already bounded RGBA image; callers use the safe decoder first."""
     pixels = image.load()
     bins = defaultdict(list)
     for y in range(1, image.height - 1):
@@ -116,7 +121,7 @@ def sample_image(path: Path, *, crop: Crop | None = None, max_colors: int = 6) -
     if not colors:
         raise SamplingError("No dominant colors found. Crop more closely around the keycaps.")
     notes = [APPROXIMATE, "Confidence is a heuristic. Small accents below 2% of retained pixels may be omitted."]
-    if crop is None:
+    if not cropped:
         notes.append("Whole image sampled: backgrounds and case colors may be included. Use a crop around keycap surfaces; automatic keycap detection is not implemented.")
     else:
         notes.append("Only the supplied crop was sampled; it may still contain legends, shadows, or backgrounds.")

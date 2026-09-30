@@ -1,11 +1,12 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
+import { loadEnv } from "vite";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://localhost:8000",
+      "/api": loadEnv(mode, ".", "KEYCAP_").KEYCAP_API_TARGET || "http://localhost:8000",
     },
   },
   test: {
@@ -14,4 +15,4 @@ export default defineConfig({
     setupFiles: "./tests/setup.ts",
     globals: true,
   },
-});
+}));

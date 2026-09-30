@@ -46,14 +46,33 @@ class Repository:
             connection.row_factory = sqlite3.Row
             connection.execute("PRAGMA foreign_keys=ON")
             version = connection.execute("PRAGMA user_version").fetchone()[0]
-            if version not in (0, 1):
+            if version not in (0, 1, 2):
                 raise StorageError("Unsupported database schema version. Use the matching application version.")
+            if version == 1:
+                # Preserve product IDs and configuration references while permitting explicit
+                # reviewed revisions of the same source URL. Ordinary imports remain immutable.
+                connection.execute("PRAGMA foreign_keys=OFF")
+                connection.execute("BEGIN IMMEDIATE")
+                try:
+                    if connection.execute("PRAGMA user_version").fetchone()[0] == 1:
+                        connection.execute("CREATE TABLE products_new (id TEXT PRIMARY KEY, kind TEXT NOT NULL CHECK(kind IN ('keyboard','keycaps')), url TEXT NOT NULL, data TEXT NOT NULL, evidence TEXT)")
+                        connection.execute("INSERT INTO products_new SELECT * FROM products")
+                        connection.execute("DROP TABLE products")
+                        connection.execute("ALTER TABLE products_new RENAME TO products")
+                        connection.execute("PRAGMA user_version=2")
+                    if connection.execute("PRAGMA foreign_key_check").fetchall():
+                        raise StorageError("Database references are inconsistent; migration was rolled back.")
+                    connection.commit()
+                except Exception:
+                    connection.rollback()
+                    raise
+                finally:
+                    connection.execute("PRAGMA foreign_keys=ON")
             # Lazy initialization avoids creating a user database merely by importing the app.
             connection.executescript("""
                 CREATE TABLE IF NOT EXISTS products (
                     id TEXT PRIMARY KEY, kind TEXT NOT NULL CHECK(kind IN ('keyboard','keycaps')),
-                    url TEXT NOT NULL, data TEXT NOT NULL, evidence TEXT,
-                    UNIQUE(kind, url)
+                    url TEXT NOT NULL, data TEXT NOT NULL, evidence TEXT
                 );
                 CREATE TABLE IF NOT EXISTS configurations (
                     id TEXT PRIMARY KEY,
@@ -61,7 +80,8 @@ class Repository:
                     keycap_set_id TEXT NOT NULL REFERENCES products(id),
                     data TEXT NOT NULL, compatibility TEXT NOT NULL
                 );
-                PRAGMA user_version=1;
+                CREATE INDEX IF NOT EXISTS products_url ON products(kind, url);
+                PRAGMA user_version=2;
             """)
             with connection:
                 yield connection
@@ -82,7 +102,7 @@ class Repository:
         except ValidationError:
             raise StorageError("Stored product data is invalid; restore a database backup.") from None
 
-    def save_product(self, product: KeyboardDefinition | KeycapSet, evidence: PageEvidence | None = None):
+    def save_product(self, product: KeyboardDefinition | KeycapSet, evidence: PageEvidence | None = None, *, reviewed_revision: bool = False):
         # Revalidate callers' objects; assignment validation alone does not protect nested lists/maps.
         product = type(product).model_validate_json(product.model_dump_json())
         kind = "keyboard" if isinstance(product, KeyboardDefinition) else "keycaps"
@@ -91,7 +111,12 @@ class Repository:
         payload = product.model_dump_json()
         with self._connection() as db:
             db.execute("BEGIN IMMEDIATE")
-            existing = db.execute("SELECT * FROM products WHERE id=? OR (kind=? AND url=?)", (product.id, kind, url)).fetchall()
+            by_id = db.execute("SELECT * FROM products WHERE id=?", (product.id,)).fetchone()
+            if by_id is not None:
+                if by_id["kind"] == kind and by_id["data"] == payload:
+                    return self._product(by_id)
+                raise Conflict("A product with this ID already exists with different data. Saved products cannot be overwritten.")
+            existing = [] if reviewed_revision else db.execute("SELECT * FROM products WHERE kind=? AND url=?", (kind, url)).fetchall()
             if existing:
                 if len(existing) == 1 and existing[0]["id"] == product.id and existing[0]["kind"] == kind and existing[0]["data"] == payload:
                     return self._product(existing[0])
@@ -106,7 +131,7 @@ class Repository:
 
     def find_product(self, url: str, kind: str):
         with self._connection() as db:
-            row = db.execute("SELECT * FROM products WHERE url=? AND kind=?", (normalize_url(url), kind)).fetchone()
+            row = db.execute("SELECT * FROM products WHERE url=? AND kind=? ORDER BY rowid DESC LIMIT 1", (normalize_url(url), kind)).fetchone()
             return self._product(row) if row is not None else None
 
     def get_evidence(self, product_id: str) -> PageEvidence | None:

@@ -27,6 +27,18 @@ def test_cache_avoids_repeat_loads_and_retains_html(tmp_path):
     assert list((tmp_path / "cache" / "pages").glob("*.html"))
 
 
+def test_old_truncated_image_cache_is_reparsed_without_network(tmp_path):
+    html = "<main>" + "".join(f'<img src="/photo-{i}.png">' for i in range(75)) + "</main>"
+    mocked = AsyncMock(load=AsyncMock(return_value=LoadedPage(html, "https://example.com/caps")))
+    service = ScrapingService(tmp_path, mocked, delay_seconds=0)
+    result = asyncio.run(service.scrape("https://example.com/caps"))
+    result.evidence.images = result.evidence.images[:30]
+    service.cache.put("https://example.com/caps", result, html)
+    recovered = asyncio.run(service.scrape("https://example.com/caps"))
+    assert recovered.cached and len(recovered.evidence.images) == 75
+    assert mocked.load.await_count == 1
+
+
 def test_refresh_and_expiry_reload(tmp_path):
     mocked = loader()
     service = ScrapingService(tmp_path, mocked, delay_seconds=0)

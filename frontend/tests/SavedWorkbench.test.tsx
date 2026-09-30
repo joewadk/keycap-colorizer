@@ -140,3 +140,35 @@ it("saves a TKL case color independently of its immutable product and restores i
   expect(screen.getByLabelText("case color")).toHaveTextContent("#F5F5F5");
   expect(screen.getByLabelText("painted colors")).toHaveTextContent('"a":"moss"');
 });
+
+it("starts from products supplied by the completed intake workflow", () => {
+  render(<SavedWorkbench initialKeyboard={boardPresets[1]} initialKeycapSet={demoKeycapSet} />);
+  expect(screen.getByLabelText("Board size")).toHaveValue(boardPresets[1].id);
+  expect(screen.getByRole("heading", { name: "ANSI 75 Preview" })).toBeInTheDocument();
+});
+
+it("applies products independently, retaining the companion product, case color, and matching paint", () => {
+  const view = render(<SavedWorkbench />);
+  paint();
+  view.rerender(<SavedWorkbench incoming={{ keyboard: boardPresets[1], caseColor: "#245577", warnings: [] }} />);
+  expect(screen.getByLabelText("case color")).toHaveTextContent("#245577");
+  expect(screen.getByLabelText("painted colors")).toHaveTextContent('"a":"moss"');
+  const reviewedCaps = { ...demoKeycapSet, id: "reviewed-caps", name: "Reviewed colors" };
+  view.rerender(<SavedWorkbench incoming={{ keycapSet: reviewedCaps, warnings: [] }} />);
+  expect(screen.getByRole("heading", { name: "ANSI 75 Preview" })).toBeInTheDocument();
+  expect(screen.getByLabelText("case color")).toHaveTextContent("#245577");
+  expect(screen.getByLabelText("painted colors")).toHaveTextContent('"a":"moss"');
+  expect(screen.getByText("REVIEWED COLORS")).toBeInTheDocument();
+});
+
+it("overlays reviewed per-key colors and rejects assignments for a board that is no longer active", () => {
+  const view = render(<SavedWorkbench initialKeyboard={boardPresets[1]} />);
+  paint();
+  view.rerender(<SavedWorkbench initialKeyboard={boardPresets[1]} incoming={{ keycapSet: demoKeycapSet,
+    targetKeyboardId: boardPresets[1].id, keyColorMap: { f1: "clay", a: "forest" }, warnings: [] }} />);
+  expect(screen.getByLabelText("painted colors")).toHaveTextContent('"f1":"clay"');
+  expect(screen.getByLabelText("painted colors")).toHaveTextContent('"a":"forest"');
+  view.rerender(<SavedWorkbench incoming={{ targetKeyboardId: "other-board", keyColorMap: { f1: "moss" }, warnings: [] }} />);
+  expect(screen.getByRole("alert")).toHaveTextContent("board changed during photo review");
+  expect(screen.getByLabelText("painted colors")).toHaveTextContent('"f1":"clay"');
+});

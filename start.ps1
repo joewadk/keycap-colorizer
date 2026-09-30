@@ -38,7 +38,7 @@ try {
     }
     Write-Host "Starting services. Open http://localhost:5173 when Vite reports ready."
     Write-Host "Press Ctrl+C to stop both services."
-    Write-Host "Save design / Load saved designs are available below the preview. Product URL intake is not connected yet."
+    Write-Host "Paste product links or use the offline demo, then paint and save designs below the preview."
     while ($true) {
         foreach ($job in $jobs) {
             # Native stderr (including Uvicorn INFO logs) becomes an error record in

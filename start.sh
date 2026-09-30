@@ -67,7 +67,7 @@ pids+=("$!")
 
 echo 'Starting services. Open http://localhost:5173 when Vite reports ready.'
 echo 'Press Ctrl+C to stop both services.'
-echo 'Save design / Load saved designs are available below the preview. Product URL intake is not connected yet.'
+echo 'Paste product links or use the offline demo, then paint and save designs below the preview.'
 while true; do
   for pid in "${pids[@]}"; do
     if ! kill -0 "$pid" 2>/dev/null; then

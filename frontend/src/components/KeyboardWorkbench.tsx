@@ -74,6 +74,27 @@ export function KeyboardWorkbench({ keyboard = demoKeyboard, keycapSet = demoKey
         onKeyClick={(keyId, additive) => setState((current) => selectKey(current, keyId, additive))}
       />
 
+      <details className="key-selector">
+        <summary>Select an individual key</summary>
+        <div className="key-selector-grid" aria-label="Individual keyboard keys">
+          {keyboard.keys.map((key) => {
+            const colorId = state.keyColorMap[key.id] ?? keycapSet.colors[0]?.id ?? "unavailable";
+            const color = keycapSet.colors.find((entry) => entry.id === colorId);
+            return <button key={key.id} type="button" className="key-selector-button"
+              data-key-id={key.id} data-color-id={colorId}
+              aria-label={`Select key ${key.legend || key.id}`}
+              aria-pressed={state.selectedKeyIds.includes(key.id)}
+              onClick={(event) => {
+                setHoveredKeyId(null);
+                setState((current) => selectKey(current, key.id, event.shiftKey));
+              }}>
+              <span className="key-color-dot" style={{ backgroundColor: color?.hex }} aria-hidden="true" />
+              {key.legend || key.id}
+            </button>;
+          })}
+        </div>
+      </details>
+
       <div className="controls">
         <div>
           <p className="control-label">SELECT GROUP</p>
